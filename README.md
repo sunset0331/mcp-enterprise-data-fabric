@@ -1,12 +1,12 @@
-# 🚀 Enterprise Data Fabric MCP Server
+# Enterprise Data Fabric MCP Server
 
 A production-grade Model Context Protocol (MCP) server providing secure access to enterprise data sources. This server implements three powerful tools for querying databases, searching policies, and fetching tickets from external APIs.
 
-**Status:** ✅ Production Ready | **Latest Version:** 1.0.0
+**Status:** Production Ready | **Latest Version:** 1.0.0
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 1. [Features](#features)
 2. [Architecture](#architecture)
@@ -21,23 +21,23 @@ A production-grade Model Context Protocol (MCP) server providing secure access t
 
 ---
 
-## ✨ Features
+## Features
 
-### 🔒 Tool 1: Query Read-Only Database
+### Tool 1: Query Read-Only Database
 - **Secure SQL execution** on PostgreSQL or SQLite
-- ✅ **SQL Injection Protection**: Only SELECT queries allowed (INSERT/UPDATE/DELETE/DROP/ALTER rejected)
+- **SQL Injection Protection**: Only SELECT queries allowed (INSERT/UPDATE/DELETE/DROP/ALTER rejected)
 - Real-time query results returned as clean JSON
 - Automatic error handling for connection failures and syntax errors
 - Supports both SQLite (development) and PostgreSQL (production)
 
-### 🔍 Tool 2: Semantic Knowledge Search
+### Tool 2: Semantic Knowledge Search
 - **Vector-based semantic search** using ChromaDB
 - Search enterprise policies, documentation, and knowledge bases
 - Find conceptually similar documents (not just keyword matches)
 - Configurable result count and metadata filtering
 - Local persistent storage at `./chroma_db`
 
-### 🎫 Tool 3: Fetch Live Tickets
+### Tool 3: Fetch Live Tickets
 - **External REST API integration** for ticket systems (JIRA, Linear, Zendesk, etc.)
 - Graceful error handling for 404s, 5xx errors, timeouts
 - Real-time ticket status, assignee, priority, and metadata
@@ -46,7 +46,7 @@ A production-grade Model Context Protocol (MCP) server providing secure access t
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────────────────────────────┐
@@ -70,7 +70,7 @@ A production-grade Model Context Protocol (MCP) server providing secure access t
 
 ---
 
-## 📦 Installation
+## Installation
 
 ### Prerequisites
 - Python 3.11+
@@ -108,13 +108,13 @@ python setup_dummy_data.py
 ```
 
 This creates:
-- ✅ SQLite database (`enterprise.db`) with sample data
-- ✅ Mock ticket JSON (`mock_tickets.json`)
-- ✅ ChromaDB collection (optional)
+- SQLite database (`enterprise.db`) with sample data
+- Mock ticket JSON (`mock_tickets.json`)
+- ChromaDB collection (optional)
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 ### Environment Variables (`.env` file)
 
@@ -143,7 +143,7 @@ TICKET_API_BASE=http://localhost:5000/v1
 
 ---
 
-## 🎯 Running the Server
+## Running the Server
 
 ### Option 1: Development Mode (3 Terminals)
 
@@ -186,7 +186,7 @@ curl http://localhost:5000/v1/tickets/ENG-104
 
 ---
 
-## 🛠️ Tools Reference
+## Tools Reference
 
 ### Tool 1: `query_read_only_database`
 
@@ -209,8 +209,8 @@ curl http://localhost:5000/v1/tickets/ENG-104
 ```
 
 **Security:**
-- ✅ Only SELECT queries allowed
-- ❌ INSERT, UPDATE, DELETE, DROP, ALTER queries rejected
+- Only SELECT queries allowed
+- INSERT, UPDATE, DELETE, DROP, ALTER queries rejected
 - Regex validation on all queries
 
 **Example Queries:**
@@ -295,7 +295,7 @@ SUPPORT-445 - Customer API downtime (high)
 
 ---
 
-## 📝 Sample Queries
+## Sample Queries
 
 ### Database Queries
 
@@ -358,7 +358,7 @@ curl http://localhost:5000/v1/health
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ### Unit Testing with cURL
 
@@ -402,7 +402,7 @@ CREATE TABLE users (
     department TEXT,
     role TEXT,
     active BOOLEAN
-);
+);SUCCESSFUL QUERIES
 ```
 
 ### Transactions Table
@@ -480,9 +480,9 @@ mcp-server-1/
 ├── .env                       # Environment configuration
 ├── .gitignore                 # Git ignore file
 ├── enterprise.db              # SQLite database (generated)
-├── mock_tickets.json          # Mock ticket data (generated)
+├── mBLOCKED QUERIES (Security Feature)data (generated)
 ├── chroma_db/                 # ChromaDB storage (generated)
-├── README.md                  # This file
+├── README.md                  # Th file
 ├── requirements.txt           # Python dependencies
 └── LICENSE                    # License file
 ```
@@ -508,7 +508,7 @@ flask==3.0.0
 
 ### ✅ Implemented
 - SQL injection protection (SELECT-only queries)
-- Input validation on all parameters
+- Input validation on all parameter
 - Error messages don't expose sensitive data
 - Database connection strings from environment
 - Timeout protection for external API calls
@@ -521,7 +521,7 @@ flask==3.0.0
 4. Add authentication/authorization
 5. Rotate API tokens regularly
 6. Monitor and log all queries
-7. Set up backup strategy for database
+7. Set up backup strategy for datase
 8. Use secrets management (AWS Secrets Manager, etc.)
 
 ---
@@ -534,7 +534,7 @@ flask==3.0.0
 ### Issue: "Failed to connect to the ticket API"
 **Solution:** Ensure `python mock_api_server.py` is running on port 5000
 
-### Issue: "chromadb library not installed"
+### Issue: "chromadb library not italled"
 **Solution:** Run `pip install chromadb`
 
 ### Issue: ChromaDB downloading large models
@@ -550,15 +550,15 @@ flask==3.0.0
 ### Workflow 1: Find HR Policy and Create Action Item
 
 ```
-1. User: "Show me the remote work policy"
-2. Tool: semantic_knowledge_search("remote work policy", 3)
-3. Server: Returns matching policies
-4. User: "Get details for Alice Johnson"
-5. Tool: query_read_only_database("SELECT * FROM users WHERE name LIKE '%Alice%'")
-6. Server: Returns Alice's details
-```
+Successful: SELECT queries work perfectly
+Successful: JOINs work perfectly
+Successful: GROUP BY works perfectly
+Blocked: INSERT queries rejected
+Blocked: UPDATE queries rejected
+Blocked: DELETE queries rejected
+Blocked: DROP queries rejected
+Blocked: ALTER queries rejected
 
-### Workflow 2: Investigate Ticket and Check Assignee
 
 ```
 1. User: "Fetch ticket ENG-104"
@@ -596,7 +596,7 @@ This project is licensed under the MIT License - see LICENSE file for details.
 ## 📧 Support
 
 For issues, questions, or suggestions:
-- Open an GitHub Issue
+- O an GitHub Issue
 - Create a Discussion
 - Contact: utkarshgaur@company.com
 
